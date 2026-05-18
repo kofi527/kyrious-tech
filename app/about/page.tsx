@@ -4,7 +4,7 @@ export default function AboutPage() {
       <div className="space-y-4">
         <h1 className="text-4xl font-bold">About Kyrious Tech</h1>
         <p className="max-w-3xl text-slate-300">
-          We are a technology partner focused on helping businesses launch and
+          We are a technology partner focused on  and lifting up businesses launch and
           scale products that users love. Our team combines product strategy,
           modern engineering practices, and cloud expertise to turn ambitious
           ideas into dependable platforms.
