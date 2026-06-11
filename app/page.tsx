@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
-import { KyriousLogo } from "../components/KyriousLogo";
+import { ServicesHeroImage } from "../components/ServicesHeroImage";
+import { services } from "./services/data";
 
 const highlights = [
   {
@@ -40,52 +42,33 @@ const visionProductPoints = [
 export default function Home() {
   return (
     <section className="space-y-14">
-      <div className="grid gap-8 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 md:grid-cols-[1.4fr_1fr] md:p-10">
-        <div className="space-y-6">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-6">
-            <KyriousLogo
-              size={84}
-              title="Kyrious Tech"
-              className="shrink-0 drop-shadow-[0_10px_40px_rgba(34,211,238,0.22)] sm:mt-0.5"
-            />
-            <div className="min-w-0 flex-1 space-y-5">
-              <p className="inline-flex rounded-full bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300">
-                AI, DevOps, and Product Engineering
-              </p>
-              <h1 className="text-4xl font-bold leading-tight md:text-6xl">
-                Your trusted partner for building and scaling modern software.
-              </h1>
-            </div>
-          </div>
-          <p className="max-w-2xl text-lg text-slate-300">
-            Kyrious Tech helps startups and growing companies move from idea to
-            production with reliable engineering, clear communication, and
-            business-focused outcomes.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
-            >
-              Book a free consultation
-            </Link>
-            <Link
-              href="/services"
-              className="rounded-lg border border-slate-700 px-5 py-3 text-sm font-semibold transition hover:border-cyan-400 hover:text-cyan-300"
-            >
-              Explore our services
-            </Link>
-          </div>
+      <div className="space-y-4">
+        <div className="overflow-hidden rounded-2xl border border-slate-800 shadow-lg shadow-cyan-500/10">
+          <Image
+            src="/hero-kyrious.png"
+            alt="Kyrious Tech — Building intelligent solutions and driving real impact with AI, cloud, custom development, and data analytics"
+            width={1024}
+            height={682}
+            priority
+            unoptimized
+            className="h-auto w-full"
+            sizes="(max-width: 1152px) 100vw, 1152px"
+          />
         </div>
-
-        <aside className="rounded-xl border border-cyan-500/30 bg-cyan-500/10 p-6">
-          <h2 className="text-xl font-semibold">Why teams choose us</h2>
-          <ul className="mt-4 space-y-3 text-sm text-slate-300">
-            <li>Dedicated cross-functional experts per engagement</li>
-            <li>Transparent delivery with weekly progress checkpoints</li>
-            <li>Scalable solutions built for long-term ownership</li>
-          </ul>
-        </aside>
+        <div className="flex flex-wrap justify-center gap-3 sm:justify-start">
+          <Link
+            href="/services"
+            className="rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+          >
+            Explore services
+          </Link>
+          <Link
+            href="/contact"
+            className="rounded-lg border border-slate-600 px-5 py-3 text-sm font-semibold transition hover:border-cyan-400 hover:text-cyan-300"
+          >
+            Book a consultation
+          </Link>
+        </div>
       </div>
 
       <div className="relative overflow-hidden rounded-2xl border border-emerald-500/25 bg-linear-to-br from-emerald-950/40 via-slate-900 to-slate-900 p-8 md:p-10">
@@ -158,6 +141,75 @@ export default function Home() {
             <p className="mt-3 text-slate-400">{item.description}</p>
           </article>
         ))}
+      </div>
+
+      <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8 md:p-10">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-xl space-y-3">
+            <p className="inline-flex rounded-full bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300">
+              Our work
+            </p>
+            <h2 className="text-3xl font-bold">Projects we&apos;ve delivered</h2>
+            <p className="text-slate-300">
+              Cloud migration, mobile maintenance, hazard-detection AI, and
+              platform APIs—see how we help teams ship and scale.
+            </p>
+          </div>
+          <Link
+            href="/projects"
+            className="inline-flex shrink-0 rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+          >
+            View all projects
+          </Link>
+        </div>
+      </div>
+
+      <div
+        id="services"
+        className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60"
+      >
+        <div
+          className="pointer-events-none absolute -left-20 bottom-0 h-48 w-48 rounded-full bg-cyan-500/10 blur-3xl"
+          aria-hidden
+        />
+        <div className="relative grid gap-8 p-8 md:grid-cols-[1fr_1.05fr] md:items-center md:p-10">
+          <div className="order-2 space-y-6 md:order-1">
+            <p className="inline-flex rounded-full bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300">
+              Our services
+            </p>
+            <h2 className="text-3xl font-bold leading-tight md:text-4xl">
+              Full-stack support from build to scale
+            </h2>
+            <p className="max-w-xl text-slate-300">
+              Product engineering, website development and maintenance, DevOps,
+              AI integration, and technical advisory—delivered with clear
+              communication and outcomes your team can own.
+            </p>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {services.map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="block rounded-lg border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm transition hover:border-cyan-500/50 hover:text-cyan-200"
+                  >
+                    <span className="font-medium text-cyan-300">
+                      {service.title}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/services"
+              className="inline-flex rounded-lg border border-slate-600 px-5 py-3 text-sm font-semibold transition hover:border-cyan-400 hover:text-cyan-300"
+            >
+              View all services
+            </Link>
+          </div>
+          <div className="order-1 overflow-hidden rounded-xl border border-slate-700/80 bg-slate-950/50 md:order-2">
+            <ServicesHeroImage className="h-auto w-full" />
+          </div>
+        </div>
       </div>
 
       <div className="grid gap-4 rounded-2xl border border-slate-800 bg-slate-900 p-6 md:grid-cols-3 md:p-8">

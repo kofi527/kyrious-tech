@@ -27,6 +27,24 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "website-development",
+    title: "Website Development & Maintenance",
+    description:
+      "Professional website development and ongoing maintenance to help scaling businesses grow online with speed, reliability, and confidence.",
+    overview:
+      "We build and maintain high-performing websites for businesses ready to scale—from launch-ready marketing sites to content-heavy platforms that need regular updates, security patches, and performance tuning as traffic and complexity grow.",
+    outcomes: [
+      "Modern, responsive websites aligned to your brand and conversion goals",
+      "Stable uptime and proactive maintenance that keeps pace with growth",
+      "Faster load times and SEO-friendly structure as your audience expands",
+    ],
+    process: [
+      "Requirements gathering, sitemap planning, and design direction",
+      "Development, content integration, and launch on your preferred stack",
+      "Ongoing maintenance, monitoring, and iterative improvements for scale",
+    ],
+  },
+  {
     slug: "devops-cloud",
     title: "DevOps & Cloud",
     description:
