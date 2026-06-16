@@ -45,10 +45,10 @@ export default function Home() {
       <div className="space-y-4">
         <div className="overflow-hidden rounded-2xl border border-slate-800 shadow-lg shadow-cyan-500/10">
           <Image
-            src="/hero-kyrious.png"
-            alt="Kyrious Tech — Building intelligent solutions and driving real impact with AI, cloud, custom development, and data analytics"
+            src="/hero-landing.png"
+            alt="Kyrious Tech — Leave the tech to us. Masters in the technological space."
             width={1024}
-            height={682}
+            height={575}
             priority
             unoptimized
             className="h-auto w-full"
