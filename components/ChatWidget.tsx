@@ -154,20 +154,20 @@ export function ChatWidget({ embedded = false }: ChatWidgetProps) {
     <div
       className={
         embedded
-          ? "flex h-[min(520px,70vh)] w-full flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-xl"
-          : "fixed bottom-24 right-6 z-50 flex h-[min(480px,calc(100vh-8rem))] w-[min(100vw-3rem,380px)] flex-col overflow-hidden rounded-2xl border border-slate-700 bg-slate-900 shadow-2xl shadow-black/50"
+          ? "flex h-[min(520px,70vh)] w-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl"
+          : "fixed bottom-24 right-6 z-50 flex h-[min(480px,calc(100vh-8rem))] w-[min(100vw-3rem,380px)] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-slate-300/50"
       }
     >
-      <header className="flex items-center justify-between border-b border-slate-800 bg-slate-950/80 px-4 py-3">
+      <header className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-4 py-3">
         <div>
-          <p className="text-sm font-semibold text-cyan-300">Kyrious Tech</p>
-          <p className="text-xs text-slate-400">We typically reply within 24h</p>
+          <p className="text-sm font-semibold text-cyan-600">Kyrious Tech</p>
+          <p className="text-xs text-slate-500">We typically reply within 24h</p>
         </div>
         {!embedded && (
           <button
             type="button"
             onClick={() => setOpen(false)}
-            className="rounded-lg px-2 py-1 text-slate-400 transition hover:bg-slate-800 hover:text-slate-200"
+            className="rounded-lg px-2 py-1 text-slate-500 transition hover:bg-slate-100 hover:text-slate-700"
             aria-label="Close chat"
           >
             ✕
@@ -177,7 +177,7 @@ export function ChatWidget({ embedded = false }: ChatWidgetProps) {
 
       <div
         ref={scrollRef}
-        className="flex-1 space-y-3 overflow-y-auto px-4 py-4"
+        className="flex-1 space-y-3 overflow-y-auto bg-white px-4 py-4"
         role="log"
         aria-live="polite"
       >
@@ -189,8 +189,8 @@ export function ChatWidget({ embedded = false }: ChatWidgetProps) {
             <p
               className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                 msg.role === "user"
-                  ? "rounded-br-md bg-cyan-500 text-slate-950"
-                  : "rounded-bl-md border border-slate-700 bg-slate-800 text-slate-100"
+                  ? "rounded-br-md bg-cyan-600 text-white"
+                  : "rounded-bl-md border border-slate-200 bg-slate-50 text-slate-700"
               }`}
             >
               {msg.text}
@@ -198,16 +198,16 @@ export function ChatWidget({ embedded = false }: ChatWidgetProps) {
           </div>
         ))}
         {step === "sending" && (
-          <p className="text-xs text-slate-500">Sending…</p>
+          <p className="text-xs text-slate-400">Sending…</p>
         )}
       </div>
 
       <form
         onSubmit={handleSubmit}
-        className="border-t border-slate-800 bg-slate-950/80 p-3"
+        className="border-t border-slate-200 bg-slate-50 p-3"
       >
         {error && step !== "done" && (
-          <p className="mb-2 text-xs text-red-400" role="alert">
+          <p className="mb-2 text-xs text-red-600" role="alert">
             {error}
           </p>
         )}
@@ -215,7 +215,7 @@ export function ChatWidget({ embedded = false }: ChatWidgetProps) {
           <button
             type="button"
             onClick={resetConversation}
-            className="w-full rounded-lg border border-slate-600 py-2.5 text-sm font-medium transition hover:border-cyan-400 hover:text-cyan-300"
+            className="w-full rounded-lg border border-slate-300 py-2.5 text-sm font-medium text-slate-700 transition hover:border-cyan-600 hover:text-cyan-600"
           >
             Send another message
           </button>
@@ -234,7 +234,7 @@ export function ChatWidget({ embedded = false }: ChatWidgetProps) {
                     ? "you@company.com"
                     : "Tell us about your project…"
               }
-              className="min-w-0 flex-1 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 disabled:opacity-50"
+              className="min-w-0 flex-1 rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 disabled:opacity-50"
               aria-label={
                 step === "name"
                   ? "Your name"
@@ -246,7 +246,7 @@ export function ChatWidget({ embedded = false }: ChatWidgetProps) {
             <button
               type="submit"
               disabled={!input.trim() || step === "sending"}
-              className="shrink-0 rounded-lg bg-cyan-400 px-4 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-50"
+              className="shrink-0 rounded-lg bg-cyan-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-cyan-500 disabled:cursor-not-allowed disabled:opacity-50"
             >
               Send
             </button>
@@ -266,7 +266,7 @@ export function ChatWidget({ embedded = false }: ChatWidgetProps) {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-cyan-400 text-slate-950 shadow-lg shadow-cyan-500/25 transition hover:bg-cyan-300 hover:scale-105 active:scale-95"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-cyan-600 text-white shadow-lg shadow-cyan-600/25 transition hover:bg-cyan-500 hover:scale-105 active:scale-95"
         aria-expanded={open}
         aria-label={open ? "Close chat" : "Open chat"}
       >

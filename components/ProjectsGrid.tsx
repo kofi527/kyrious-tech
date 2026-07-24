@@ -7,22 +7,22 @@ export function ProjectsGrid() {
       {projects.map((project) => (
         <article
           key={project.slug}
-          className="overflow-hidden rounded-xl border border-slate-800 bg-slate-950/50 transition hover:border-cyan-500/40"
+          className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:border-cyan-300 hover:shadow-md"
         >
-          <div className="border-b border-slate-800">
+          <div className="border-b border-slate-200">
             <ProjectIllustration
               variant={project.image}
               className="h-auto w-full"
             />
           </div>
           <div className="space-y-3 p-6">
-            <p className="text-xs font-semibold uppercase tracking-wide text-cyan-400/90">
+            <p className="text-xs font-semibold uppercase tracking-wide text-cyan-600">
               {project.category}
             </p>
-            <h3 className="text-xl font-semibold text-slate-100">
+            <h3 className="text-xl font-semibold text-slate-900">
               {project.title}
             </h3>
-            <p className="text-sm leading-relaxed text-slate-400">
+            <p className="text-sm leading-relaxed text-slate-600">
               {project.description}
             </p>
           </div>
