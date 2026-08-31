@@ -19,7 +19,7 @@ const navLinks = [
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-white">
       <body className="min-h-screen bg-white text-slate-900 antialiased">
         <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-6">
           <header className="border-b border-slate-200 py-5">

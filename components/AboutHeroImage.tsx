@@ -17,8 +17,8 @@ export function AboutHeroImage({ className }: AboutHeroImageProps) {
     >
       <defs>
         <linearGradient id="about-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#0f172a" />
-          <stop offset="100%" stopColor="#1e293b" />
+          <stop offset="0%" stopColor="#f8fafc" />
+          <stop offset="100%" stopColor="#e2e8f0" />
         </linearGradient>
         <linearGradient id="about-accent" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#22d3ee" />
@@ -42,7 +42,7 @@ export function AboutHeroImage({ className }: AboutHeroImageProps) {
       />
 
       {/* Central hub */}
-      <circle cx="320" cy="240" r="72" fill="#0f172a" stroke="url(#about-accent)" strokeWidth="2.5" />
+      <circle cx="320" cy="240" r="72" fill="#ffffff" stroke="url(#about-accent)" strokeWidth="2.5" />
       <circle cx="320" cy="240" r="28" fill="url(#about-accent)" fillOpacity="0.25" />
       <path
         d="M320 212 L320 268 M296 240 L344 240"
@@ -68,7 +68,7 @@ export function AboutHeroImage({ className }: AboutHeroImageProps) {
             strokeWidth="1.5"
             strokeDasharray="6 4"
           />
-          <circle cx={cx} cy={cy} r="44" fill="#0f172a" stroke="#334155" strokeWidth="2" />
+          <circle cx={cx} cy={cy} r="44" fill="#ffffff" stroke="#cbd5e1" strokeWidth="2" />
           <circle cx={cx} cy={cy - 12} r="14" fill="url(#about-accent)" fillOpacity="0.4" />
           <rect
             x={cx - 22}
@@ -76,21 +76,21 @@ export function AboutHeroImage({ className }: AboutHeroImageProps) {
             width={44}
             height={8}
             rx="4"
-            fill="#334155"
+            fill="#cbd5e1"
           />
         </g>
       ))}
 
       {/* Growth bars */}
-      <rect x="88" y="88" width="160" height="100" rx="12" fill="#0f172a" stroke="#334155" strokeWidth="2" />
-      <rect x="108" y="148" width="24" height="28" rx="4" fill="#334155" />
-      <rect x="140" y="128" width="24" height="48" rx="4" fill="#475569" />
+      <rect x="88" y="88" width="160" height="100" rx="12" fill="#ffffff" stroke="#cbd5e1" strokeWidth="2" />
+      <rect x="108" y="148" width="24" height="28" rx="4" fill="#cbd5e1" />
+      <rect x="140" y="128" width="24" height="48" rx="4" fill="#94a3b8" />
       <rect x="172" y="108" width="24" height="68" rx="4" fill="url(#about-accent)" fillOpacity="0.6" />
       <rect x="204" y="118" width="24" height="58" rx="4" fill="url(#about-accent)" fillOpacity="0.35" />
       <rect x="108" y="100" width="80" height="8" rx="4" fill="#22d3ee" fillOpacity="0.6" />
 
       {/* Partnership handshake motif (abstract) */}
-      <rect x="392" y="88" width="160" height="100" rx="12" fill="#0f172a" stroke="#334155" strokeWidth="2" />
+      <rect x="392" y="88" width="160" height="100" rx="12" fill="#ffffff" stroke="#cbd5e1" strokeWidth="2" />
       <path
         d="M432 148 C448 128 472 128 488 148 C504 132 528 136 536 156 L520 168 C512 160 496 158 488 166 C472 150 448 150 432 166 L416 154 C424 140 416 132 432 148 Z"
         fill="url(#about-accent)"

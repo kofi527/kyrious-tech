@@ -52,7 +52,7 @@ export function KyriousLogo({
         width="53"
         height="53"
         rx="14"
-        fill="#0f172a"
+        fill="#ffffff"
         stroke={`url(#${glowId})`}
         strokeWidth="1.25"
       />
